@@ -198,7 +198,7 @@ namespace Lean.Touch
 				Destroy(cubeGenerated);
             }
 			var cubePrefab = Resources.Load<GameObject>("cube");
-			cubeGenerated = Instantiate(cubePrefab, center, Quaternion.identity, transform);
+			cubeGenerated = Instantiate(cubePrefab, center, Quaternion.identity);
 			Debug.Log("select");
 			//EventPool.Trigger("SelectImageFailed");
 			//EventPool.Trigger("ShowMessage", "选取图片失败");
