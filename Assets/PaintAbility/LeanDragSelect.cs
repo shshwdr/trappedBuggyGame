@@ -8,7 +8,7 @@ namespace Lean.Touch
 {
 	/// <summary>This component draws trails behind fingers.
 	/// NOTE: This requires you to enable the LeanTouch.RecordFingers setting.</summary>
-	[ExecuteInEditMode]
+	//[ExecuteInEditMode]
 	[HelpURL(LeanTouch.HelpUrlPrefix + "LeanDragSelect")]
 	[AddComponentMenu(LeanTouch.ComponentPathPrefix + "Drag Select")]
 	public class LeanDragSelect : MonoBehaviour
@@ -21,6 +21,7 @@ namespace Lean.Touch
 			public float        Age;
 			public float        Width;
 		}
+		GameObject cubeGenerated;
 
 		/// <summary>The method used to find fingers to use with this component. See LeanFingerFilter documentation for more information.</summary>
 		public LeanFingerFilter Use = new LeanFingerFilter(true);
@@ -180,21 +181,27 @@ namespace Lean.Touch
 			}
 
 
-			//foreach(var item in selectableItems)
-			//         {
-			//	Debug.Log(maxRadius + " "+ item.radius +" lalala "+ item.position + " " + center);
-			//	var diff = item.transform.position - center;
-			//	if ((new Vector2(diff.x, diff.y)).magnitude<item.radius  &&
-			//                 maxRadius < 2 * item.radius)
-			//	{
-			//		EventPool.Trigger("SelectImage", item);
-			//		//Debug.Log("circled");
-			//		return;
-			//             }
-			//}
+            //foreach(var item in selectableItems)
+            //         {
+            //	Debug.Log(maxRadius + " "+ item.radius +" lalala "+ item.position + " " + center);
+            //	var diff = item.transform.position - center;
+            //	if ((new Vector2(diff.x, diff.y)).magnitude<item.radius  &&
+            //                 maxRadius < 2 * item.radius)
+            //	{
+            //		EventPool.Trigger("SelectImage", item);
+            //		//Debug.Log("circled");
+            //		return;
+            //             }
+            //}
+            if (cubeGenerated)
+            {
+				Destroy(cubeGenerated);
+            }
+			var cubePrefab = Resources.Load<GameObject>("cube");
+			cubeGenerated = Instantiate(cubePrefab, center, Quaternion.identity, transform);
 			Debug.Log("select");
-			EventPool.Trigger("SelectImageFailed");
-			EventPool.Trigger("ShowMessage", "选取图片失败");
+			//EventPool.Trigger("SelectImageFailed");
+			//EventPool.Trigger("ShowMessage", "选取图片失败");
 			//EventPool.Trigger("SelectImageFailed",""
 			//Debug.Log("not circled"); 
 
