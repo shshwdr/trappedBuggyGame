@@ -10,7 +10,7 @@ public class CharacterManager : MonoBehaviour
     void Start()
     {
         playerMovements = GameObject.FindObjectsOfType<PlayerMovement>();
-        playerMovements[currentIndex].isControlling = true;
+        playerMovements[currentIndex].enablePlayer();
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            playerMovements[currentIndex].isControlling = false;
+            playerMovements[currentIndex].disablePlayer();
             currentIndex++;
             if (currentIndex >= playerMovements.Length)
             {
@@ -27,7 +27,7 @@ public class CharacterManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            playerMovements[currentIndex].isControlling = false;
+            playerMovements[currentIndex].disablePlayer();
             currentIndex--;
             if (currentIndex <0)
             {
@@ -35,6 +35,6 @@ public class CharacterManager : MonoBehaviour
             }
         }
 
-        playerMovements[currentIndex].isControlling = true;
+        playerMovements[currentIndex].enablePlayer();
     }
 }

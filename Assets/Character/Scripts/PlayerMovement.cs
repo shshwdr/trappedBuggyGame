@@ -42,7 +42,21 @@ public class PlayerMovement : MonoBehaviour
     bool hasMoved = false;
     bool hasJumped = false;
 
-    public bool isControlling = false;
+    bool isControlling = false;
+    public GameObject ability;
+
+    public void enablePlayer()
+    {
+        isControlling = true;
+        ability.SetActive(true);
+    }
+
+    public void disablePlayer()
+    {
+        isControlling = false;
+        ability.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
