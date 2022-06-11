@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,14 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     PlayerMovement[] playerMovements;
+    CinemachineVirtualCamera camera;
     int currentIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
         playerMovements = GameObject.FindObjectsOfType<PlayerMovement>();
+        camera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+        camera.Follow = playerMovements[currentIndex].transform;
         playerMovements[currentIndex].enablePlayer();
     }
 
@@ -36,5 +40,6 @@ public class CharacterManager : MonoBehaviour
         }
 
         playerMovements[currentIndex].enablePlayer();
+        camera.Follow = playerMovements[currentIndex].transform;
     }
 }
