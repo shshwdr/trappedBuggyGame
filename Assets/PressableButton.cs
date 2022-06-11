@@ -66,7 +66,7 @@ public class PressableButton : Programmable
         DOTween.KillAll();
 
         buttonObject.transform.DOScaleY(1, turnOffTime);
-        reactItem.transform.DOLocalMoveY(0, turnOffTime);
+        reactItem.GetComponent<IReactItem>().react(false);
     }
 
 
@@ -81,8 +81,8 @@ public class PressableButton : Programmable
         waitTimer = 0;
         turnOffTimer = 0;
         buttonObject.transform.DOScaleY(0, turnOnTime);
-        reactItem.transform.DOLocalMoveY(5, turnOnTime);
 
+        reactItem.GetComponent<IReactItem>().react(true);
         //reactItem.GetComponent<IReactItem>().react(isTurnedOn);
     }
 

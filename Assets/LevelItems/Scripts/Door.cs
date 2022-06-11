@@ -1,14 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Door : MonoBehaviour,IReactItem
 {
     public GameObject actualItem;
+    float turnOffTime = 0.1f;
     public void react(bool isOn)
     {
-        
-        actualItem.SetActive(!isOn);
+        if (isOn)
+        {
+
+            actualItem.transform.DOLocalMoveY(5, turnOffTime);
+        }
+        else
+        {
+
+            actualItem.transform.DOLocalMoveY(0, turnOffTime);
+        }
     }
 
 
