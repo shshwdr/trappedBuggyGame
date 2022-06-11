@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 228288269}
   - component: {fileID: 228288271}
   - component: {fileID: 228288270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1544813178054342536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6802930185553641347}
   - component: {fileID: 6807690755975940758}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,9 +223,9 @@ GameObject:
   - component: {fileID: 1147265386}
   - component: {fileID: 1147265384}
   - component: {fileID: 1147265385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
