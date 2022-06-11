@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Pool;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,6 +37,7 @@ public class HPObject : MonoBehaviour
             return;
         }
         isAlive = false;
+        EventPool.Trigger<HPObject>("die", this);
         Destroy(gameObject);
     }
 
