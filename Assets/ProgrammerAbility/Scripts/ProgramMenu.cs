@@ -7,7 +7,7 @@ public class ProgramMenu : MonoBehaviour
 {
     ProgramCell[] cells;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         cells = GetComponentsInChildren<ProgramCell>();
         foreach(var c in cells)

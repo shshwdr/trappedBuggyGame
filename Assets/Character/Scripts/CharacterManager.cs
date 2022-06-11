@@ -30,6 +30,8 @@ public class CharacterManager : Singleton<CharacterManager>
             if (!hasAliveCharacter())
             {
                 Debug.Log("gameover");
+
+                GameManager.Instance.restart();
                 return;
             }
             nextCharacter();

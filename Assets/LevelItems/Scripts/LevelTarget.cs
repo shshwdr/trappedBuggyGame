@@ -9,6 +9,8 @@ public class LevelTarget : MonoBehaviour
         if(collision.tag == "Player")
         {
             Debug.Log("win");
+
+            GameManager.Instance.restart();
         }
     }
     // Start is called before the first frame update
