@@ -14,7 +14,15 @@ public class Shoot : MonoBehaviour
 
     void drawline(Vector3[] points)
     {
-
+        if (!gameObject.active)
+        {
+            return;
+        }
+        foreach(var p in points)
+        {
+            var go = Instantiate(bullet, transform.position, Quaternion.identity);
+            go.GetComponent<Bullet>().init((p - transform.position).normalized);
+        }
     }
     // Update is called once per frame
     void Update()

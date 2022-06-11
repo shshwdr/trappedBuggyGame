@@ -4,11 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : Singleton<CharacterManager>
 {
     PlayerMovement[] playerMovements;
     CinemachineVirtualCamera camera;
     int currentIndex = 0;
+
+    public PlayerMovement currentPlayer { get { return playerMovements[currentIndex]; } }
     // Start is called before the first frame update
     void Start()
     {

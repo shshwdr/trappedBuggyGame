@@ -17,6 +17,10 @@ public class Draw : MonoBehaviour
     void draw(Vector3[] positions)
     {
 
+        if (!gameObject.active)
+        {
+            return;
+        }
         //Debug.Log("positions:");
         //foreach(var v in positions)
         //{
