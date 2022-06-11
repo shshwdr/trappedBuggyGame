@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SearchProgrammables : MonoBehaviour
+public class SearchProgrammables : MonoBehaviour, Ability
 {
     Programmable[] programmables;
     public float detectDistance = 1;
@@ -15,7 +15,12 @@ public class SearchProgrammables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(Programmable p in programmables)
+        if (programmables == null)
+        {
+
+            programmables = GameObject.FindObjectsOfType<Programmable>(true);
+        }
+        foreach (Programmable p in programmables)
         {
             if((p.transform.position - transform.position).magnitude < detectDistance)
             {
@@ -25,6 +30,22 @@ public class SearchProgrammables : MonoBehaviour
             {
 
                 p.activate(false);
+            }
+        }
+    }
+
+    public void activate(bool isActive)
+    {
+        if(programmables == null)
+        {
+
+            programmables = GameObject.FindObjectsOfType<Programmable>(true);
+        }
+        foreach (Programmable p in programmables)
+        {
+            if ((p.transform.position - transform.position).magnitude < detectDistance)
+            {
+                p.setVisible(isActive);
             }
         }
     }

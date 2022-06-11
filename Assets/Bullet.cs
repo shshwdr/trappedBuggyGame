@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Vector3 dir;
+    float speed = 2;
     Rigidbody2D rb;
     public LayerMask destroyLayer;
 
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour
     {
         this.dir = dir;
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = dir;
+        rb.velocity = dir*speed;
     }
     // Start is called before the first frame update
     void Start()

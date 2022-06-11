@@ -21,6 +21,7 @@ public class CharacterManager : Singleton<CharacterManager>
 
 
         EventPool.OptIn<HPObject>("die", CharacterDie);
+        EventPool.Trigger("updateCharacter");
     }
 
     void CharacterDie(HPObject ob)
@@ -73,6 +74,7 @@ public class CharacterManager : Singleton<CharacterManager>
         }
         playerMovements[currentIndex].enablePlayer();
         camera.Follow = playerMovements[currentIndex].transform;
+        EventPool.Trigger("updateCharacter");
     }
 
     void prevCharacter()
@@ -98,6 +100,7 @@ public class CharacterManager : Singleton<CharacterManager>
 
         playerMovements[currentIndex].enablePlayer();
         camera.Follow = playerMovements[currentIndex].transform;
+        EventPool.Trigger("updateCharacter");
     }
 
     // Update is called once per frame

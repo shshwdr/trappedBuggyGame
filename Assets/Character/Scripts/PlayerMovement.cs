@@ -49,12 +49,23 @@ public class PlayerMovement : MonoBehaviour
     {
         isControlling = true;
         ability.SetActive(true);
+        var ab = ability.GetComponent<Ability>();
+        if (ab != null)
+        {
+            ab.activate(true);
+        }
     }
 
     public void disablePlayer()
     {
         isControlling = false;
+        var ab = ability.GetComponent<Ability>();
+        if (ab!=null)
+        {
+            ab.activate(false);
+        }
         ability.SetActive(false);
+
     }
 
     // Start is called before the first frame update
