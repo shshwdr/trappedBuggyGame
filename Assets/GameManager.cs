@@ -14,11 +14,13 @@ public class GameManager : Singleton<GameManager>
     public void nextLevel()
     {
 
+        Physics2D.gravity = new Vector2(0, -25f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
     public void restart()
     {
 
+        Physics2D.gravity = new Vector2(0, -25f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     // Update is called once per frame
