@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ab.activate(true);
         }
+        GetComponent<Character>().enablePlayer();
     }
 
     public void disablePlayer()
@@ -65,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             ab.activate(false);
         }
         ability.SetActive(false);
+        GetComponent<Character>().disablePlayer();
 
     }
 

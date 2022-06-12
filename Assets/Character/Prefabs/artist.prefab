@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7074136237757656476, guid: 1c31e993a8142fb45b43f423fd0f2114, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7074136237757656479, guid: 1c31e993a8142fb45b43f423fd0f2114, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -81,6 +85,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7074136237757656479, guid: 1c31e993a8142fb45b43f423fd0f2114, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659008011037061713, guid: 1c31e993a8142fb45b43f423fd0f2114, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
