@@ -13,20 +13,20 @@ public class Character : MonoBehaviour
 
     public void enablePlayer()
     {
-        if(GetComponent<Rigidbody2D>() == null)
-        {
-            rb = gameObject. AddComponent<Rigidbody2D>();
-            rb.freezeRotation = true;
-        }
+        //if(GetComponent<Rigidbody2D>() == null)
+        //{
+        //    rb = gameObject. AddComponent<Rigidbody2D>();
+        //    rb.freezeRotation = true;
+        //}
         enabled = true;
        // rb.sharedMaterial = null;
     }
     public void disablePlayer()
     {
-        if (isOnStickPlatform>0)
-        {
-            Destroy(rb);
-        }
+        //if (isOnStickPlatform>0)
+        //{
+        //    Destroy(rb);
+        //}
 
         enabled = false;
         //rb.sharedMaterial = disabledMaterial;

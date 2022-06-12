@@ -18,25 +18,25 @@ public class StickyPlatformer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && collision.transform.parent != transform.parent && collision.transform.parent.parent != transform.parent)
-        {
-            collision.transform.parent.parent = transform.parent;
-            //collision.transform.parent.GetComponent<Rigidbody2D>().simulated = false;
-            collision.transform.parent.GetComponent<Character>().isOnStickPlatform++;
-            if (!collision.transform.parent.GetComponent<Character>().enabled)
-            {
+        //if (collision.tag == "Player" && collision.transform.parent != transform.parent && collision.transform.parent.parent != transform.parent)
+        //{
+        //    collision.transform.parent.parent = transform.parent;
+        //    //collision.transform.parent.GetComponent<Rigidbody2D>().simulated = false;
+        //    collision.transform.parent.GetComponent<Character>().isOnStickPlatform++;
+        //    if (!collision.transform.parent.GetComponent<Character>().enabled)
+        //    {
 
-                Destroy( collision.transform.parent.GetComponent<Rigidbody2D>());
-            }
-        }
+        //        Destroy( collision.transform.parent.GetComponent<Rigidbody2D>());
+        //    }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && collision.transform.parent!=null && collision.transform.parent.parent == transform.parent)
-        {
-            collision.transform.parent.parent = transform.parent.parent;
-            collision.transform.parent.GetComponent<Character>().isOnStickPlatform--;
-        }
+        //if (collision.tag == "Player" && collision.transform.parent!=null && collision.transform.parent.parent == transform.parent)
+        //{
+        //    collision.transform.parent.parent = transform.parent.parent;
+        //    collision.transform.parent.GetComponent<Character>().isOnStickPlatform--;
+        //}
     }
 }
