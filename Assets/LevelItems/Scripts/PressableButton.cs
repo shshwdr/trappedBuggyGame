@@ -63,7 +63,7 @@ public class PressableButton : Programmable
 
         state = States.turningOff;
 
-        DOTween.KillAll();
+        transform.DOKill();
 
         buttonObject.transform.DOScaleY(1, turnOffTime);
         reactItem.GetComponent<IReactItem>().react(false);
@@ -76,7 +76,7 @@ public class PressableButton : Programmable
         state = States.turningOn;
 
 
-        DOTween.KillAll();
+        transform.DOKill();
         turnOnTimer = 0;
         waitTimer = 0;
         turnOffTimer = 0;

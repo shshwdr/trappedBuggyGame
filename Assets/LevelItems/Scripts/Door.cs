@@ -9,6 +9,7 @@ public class Door : MonoBehaviour,IReactItem
     float turnOffTime = 0.1f;
     public void react(bool isOn)
     {
+        transform.DOKill();
         if (isOn)
         {
 
