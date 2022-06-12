@@ -11,17 +11,22 @@ public class CharacterManager : Singleton<CharacterManager>
     int currentIndex = 0;
 
     public PlayerMovement currentPlayer { get { return playerMovements[currentIndex]; } }
-    // Start is called before the first frame update
-    void Start()
+
+    public void startLevel()
     {
+
         playerMovements = GameObject.FindObjectsOfType<PlayerMovement>();
         camera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         camera.Follow = playerMovements[currentIndex].transform;
         playerMovements[currentIndex].enablePlayer();
+        EventPool.Trigger("updateCharacter");
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
 
 
         EventPool.OptIn<HPObject>("die", CharacterDie);
-        EventPool.Trigger("updateCharacter");
     }
 
     void CharacterDie(HPObject ob)

@@ -10,7 +10,10 @@ public class LevelTarget : MonoBehaviour
         {
             Debug.Log("win");
 
-            GameManager.Instance.restart();
+
+            Physics2D.gravity = new Vector2(0, -25f);
+
+            GameManager.Instance.nextLevel();
         }
     }
     // Start is called before the first frame update

@@ -10,6 +10,12 @@ public class GameManager : Singleton<GameManager>
     {
         
     }
+
+    public void nextLevel()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
     public void restart()
     {
 
