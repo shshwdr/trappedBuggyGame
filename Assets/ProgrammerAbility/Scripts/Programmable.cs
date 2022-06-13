@@ -10,7 +10,7 @@ public class Programmable : MonoBehaviour
 
     public string turnOnTrueString = "On";
     public string turnOnFalseString = "Off";
-    public string notControlString = "Off";
+    public string notControlString = "Not Control";
 
 
     public bool isControlledByProgrammer = false;
@@ -18,6 +18,105 @@ public class Programmable : MonoBehaviour
 
     ProgramCell programCell;
     TMP_Text turnOnLabel;
+
+    protected enum States { off, turningOn, on, waitToTurnOff, turningOff }
+
+    protected States state;
+    public float turnOffTime = 0.1f;
+    protected float turnOnTimer;
+
+    public float waitTime = 5f;
+    protected float waitTimer;
+
+    public float turnOnTime = 0.1f;
+    protected float turnOffTimer;
+
+    public virtual void turnOn()
+    {
+        isTurnedOn = true;
+        startTurningOn();
+
+        updateText();
+    }
+
+    public void turnOff()
+    {
+
+        isTurnedOn = false;
+
+        switch (state)
+        {
+            case States.on:
+            case States.turningOn:
+                state = States.waitToTurnOff;
+                break;
+            default:
+                Debug.LogError("wrong state");
+                break;
+        }
+    }
+
+
+
+    protected virtual void Update()
+    {
+        switch (state)
+        {
+            case States.off:
+                break;
+            case States.turningOn:
+                if (turnOnTimer < turnOnTime)
+                {
+                    turnOnTimer += Time.deltaTime;
+                }
+                else
+                {
+                    state = States.on;
+                }
+                break;
+            case States.turningOff:
+                if (turnOffTimer < turnOffTime)
+                {
+                    turnOffTimer += Time.deltaTime;
+                }
+                else
+                {
+                    state = States.off;
+                }
+                break;
+            case States.waitToTurnOff:
+                if (waitTimer < waitTime)
+                {
+                    waitTimer += Time.deltaTime;
+                }
+                else
+                {
+                    startTurningOff();
+                }
+                break;
+
+        }
+
+
+    }
+
+    public virtual void programmerChange()
+    {
+        if (!isControlledByProgrammer)
+        {
+
+            turnOnByProgrammer();
+        }
+        else if (programmerTurnedOn)
+        {
+
+            turnOffByProgrammer();
+        }
+        else
+        {
+            stopControll();
+        }
+    }
 
     public virtual void toggleTurnOn()
     {
@@ -33,8 +132,17 @@ public class Programmable : MonoBehaviour
 
         updateText();
     }
-    public virtual void startTurningOn() { }
-    public virtual void startTurningOff() { }
+    public virtual void startTurningOn()
+    {
+        state = States.turningOn;
+        turnOnTimer = 0;
+        waitTimer = 0;
+        turnOffTimer = 0;
+    }
+    public virtual void startTurningOff()
+    {
+        state = States.turningOff;
+    }
     public void turnOnByProgrammer()
     {
         isControlledByProgrammer = true;
@@ -110,8 +218,4 @@ public class Programmable : MonoBehaviour
         updateText();
     }
 
-    public virtual void programmerChange()
-    {
-
-    }
 }

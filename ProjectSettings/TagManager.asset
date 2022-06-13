@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Cube
+  - EnemyBullet
+  - ShootingEnemy
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - obstacle
   - bullet
   - button
-  - 
-  - 
+  - enemyBullet
+  - shootingEnemy
   - 
   - 
   - 
