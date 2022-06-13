@@ -15,7 +15,13 @@ public class GameManager : Singleton<GameManager>
     {
 
         Physics2D.gravity = new Vector2(0, -25f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void prevLevel()
+    {
+
+        Physics2D.gravity = new Vector2(0, -25f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
     public void restart()
     {
@@ -29,6 +35,14 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.R))
         {
             restart();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            nextLevel();
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            prevLevel();
         }
     }
 }
