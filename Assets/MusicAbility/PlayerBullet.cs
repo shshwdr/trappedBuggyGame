@@ -31,7 +31,7 @@ public class PlayerBullet : MonoBehaviour
             isDead = true;
             //GetComponent<Collider2D>().isTrigger = true;
             //rb.velocity = Vector3.zero;
-            Destroy(gameObject, 0.1f);
+            GetComponent<Bullet>().destroy();
         }
         //OnTriggerEnter2D(collision.collider);
     }

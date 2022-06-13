@@ -59,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void disablePlayer()
     {
+        rb.velocity = Vector3.zero;
+        horizontalMove = 0;
+        verticalMove = 0;
         isControlling = false;
         var ab = ability.GetComponent<Ability>();
         if (ab!=null)

@@ -68,7 +68,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             currentIndex = 0;
         }
-        while (!playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
+        while (playerMovements[currentIndex] == null || playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
         {
             currentIndex++;
             if (currentIndex >= playerMovements.Length)
@@ -94,7 +94,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             currentIndex = playerMovements.Length - 1;
         }
-        while (!playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
+        while (playerMovements[currentIndex] == null || playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
         {
             currentIndex--;
             if (currentIndex < 0)

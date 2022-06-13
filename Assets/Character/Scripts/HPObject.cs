@@ -38,7 +38,7 @@ public class HPObject : MonoBehaviour
         }
         isAlive = false;
         EventPool.Trigger<HPObject>("die", this);
-        Destroy(gameObject);
+        Destroy(gameObject,0.1f);
     }
 
     // Update is called once per frame
