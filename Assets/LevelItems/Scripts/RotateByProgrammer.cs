@@ -9,17 +9,17 @@ public class RotateByProgrammer : LoopProgrammable
     public override void stopControll()
     {
         base.stopControll();
-        if (isTurnedOn)
-        {
+        //if (isTurnedOn)
+        //{
             isTurnedOn = false;
             state = States.waitToTurnOff;
-            return;
-        }
-        if (!isTurnedOn)
-        {
-            isTurnedOn = true;
-            startTurningOn();
-        }
+        //    return;
+        //}
+        //if (!isTurnedOn)
+        //{
+        //    isTurnedOn = true;
+        //    startTurningOn();
+        //}
     }
     public override void startTurningOff()
     {
@@ -28,6 +28,10 @@ public class RotateByProgrammer : LoopProgrammable
         {
             return;
         }
+
+
+        Debug.Log("return back with current index" + currentIndex);
+
         transform.Rotate(rotateDegree * (maxIndex - currentIndex+1));
         currentIndex = 0;
     }

@@ -11,13 +11,24 @@ public class LoopProgrammable : Programmable
     public override void programmerChange()
     {
         currentIndex++;
-        if(currentIndex == maxIndex)
+        Debug.Log("add current index to " + currentIndex);
+        if(currentIndex > maxIndex)
         {
             currentIndex = 0;
         }
         turnOnByProgrammer();
     }
 
+    public override void turnOnByProgrammer()
+    {
+        isControlledByProgrammer = true;
+       // if (!isTurnedOn)
+        {
+            startTurningOn();
+            //isTurnedOn = true;
+        }
+        //updateText();
+    }
 
     public override void updateText()
     {

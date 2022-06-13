@@ -143,7 +143,7 @@ public class Programmable : MonoBehaviour
     {
         state = States.turningOff;
     }
-    public void turnOnByProgrammer()
+    public virtual void turnOnByProgrammer()
     {
         isControlledByProgrammer = true;
         programmerTurnedOn = true;
