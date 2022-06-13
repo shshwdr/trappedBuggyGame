@@ -201,7 +201,7 @@ public class PressableButton : Programmable
         if (collision.tag == "Player" || collision.tag == "Cube" || collision.tag == "Bullet")
         {
             collideCount++;
-            Debug.Log("collide count " + collideCount);
+            Debug.Log("collide count " + collideCount + collision.gameObject.name);
             if (!(isControlledByProgrammer && !programmerTurnedOn)) { 
                 if (!isTurnedOn)
                 {
