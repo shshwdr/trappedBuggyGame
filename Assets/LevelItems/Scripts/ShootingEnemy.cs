@@ -42,6 +42,6 @@ public class ShootingEnemy : MonoBehaviour
     void shoot()
     {
         var go = Instantiate<GameObject>(bullet, transform.position, Quaternion.identity);
-        go.GetComponent<Bullet>().init(dir);
+        go.GetComponent<Bullet>().init(transform.up);
     }
 }

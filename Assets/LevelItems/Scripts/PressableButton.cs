@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 //using tw
 
-public class PressableButton : Programmable
+public class PressableButton : OnOffProgrammable
 {
 
     public GameObject reactItem;

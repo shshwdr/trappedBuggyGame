@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DiableFunction : Programmable
+public class DiableFunction : OnOffProgrammable
 {
     public UnityEvent turnOnFunction;
     public UnityEvent turnOffFunction;

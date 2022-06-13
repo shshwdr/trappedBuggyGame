@@ -20,9 +20,10 @@ public class ProgramMenu : MonoBehaviour
     {
         foreach(var c in cells)
         {
-            if (!c.gameObject.active)
+            if (!c.isUsed)
             {
                 c.gameObject.SetActive(true);
+                c.isUsed = true;
                 return c;
             }
         }

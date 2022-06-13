@@ -17,7 +17,7 @@ public class Programmable : MonoBehaviour
     public bool programmerTurnedOn = false;
 
     ProgramCell programCell;
-    TMP_Text turnOnLabel;
+    protected TMP_Text turnOnLabel;
 
     protected enum States { off, turningOn, on, waitToTurnOff, turningOff }
 
@@ -187,7 +187,7 @@ public class Programmable : MonoBehaviour
         }
     }
 
-    public void updateText()
+    public virtual void updateText()
     {
         if (isControlledByProgrammer)
         {

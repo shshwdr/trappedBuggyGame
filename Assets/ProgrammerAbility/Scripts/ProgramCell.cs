@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ProgramCell : MonoBehaviour
 {
     Button button;
+    public bool isUsed = false;
     // Start is called before the first frame update
     void Start()
     {
