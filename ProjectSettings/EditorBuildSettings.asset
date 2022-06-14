@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/6 1 turn shooting flower.unity
     guid: 8a02cd5815a069a4996dbc5c513b98b0
   - enabled: 1
+    path: Assets/Scenes/7 moving platformer.unity
+    guid: eb09e06797939cf4f871072cf90918ed
+  - enabled: 1
+    path: Assets/Scenes/8 moving belt.unity
+    guid: 10fa0cec6598e314cb0c2b15e8c81883
+  - enabled: 1
     path: Assets/Scenes/final.unity
     guid: 9c22482b8ff16684fab342bb8e0f4069
   m_configObjects: {}
