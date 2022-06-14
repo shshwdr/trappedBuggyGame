@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
@@ -106,10 +107,42 @@ public class CharacterController2D : MonoBehaviour
 
 			footstepTimer += Time.deltaTime;
 		}
+
+   //     if (platform.Count > 0)
+   //     {
+			//m_Rigidbody2D.velocity += platform[0].velocity;
+   //     }
 	}
 
+	//List<Rigidbody2D> platform = new List<Rigidbody2D>();
+ //   private void OnTriggerEnter2D(Collider2D collision)
+ //   {
+ //       if(collision.tag == "Platform")
+ //       {
+	//		var rb = collision.GetComponent<Rigidbody2D>();
+ //           if (!rb)
+ //           {
+	//			rb = collision.GetComponentInParent<Rigidbody2D>();
+	//		}
+	//		platform.Add(rb );
 
-	public void Move(float move, bool crouch, bool jump)
+	//	}
+ //   }
+ //   private void OnTriggerExit2D(Collider2D collision)
+ //   {
+	//	if (collision.tag == "Platform")
+	//	{
+	//		var rb = collision.GetComponent<Rigidbody2D>();
+	//		if (!rb)
+	//		{
+	//			rb = collision.GetComponentInParent<Rigidbody2D>();
+	//		}
+	//		platform .Remove(rb);
+	//	}
+	//}
+
+
+    public void Move(float move, bool crouch, bool jump)
 	{
         if (!m_Rigidbody2D)
         {
@@ -198,11 +231,11 @@ public class CharacterController2D : MonoBehaviour
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
-		m_FacingRight = !m_FacingRight;
+		//m_FacingRight = !m_FacingRight;
 
-		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		//// Multiply the player's x local scale by -1.
+		//Vector3 theScale = transform.localScale;
+		//theScale.x *= -1;
+		//transform.localScale = theScale;
 	}
 }

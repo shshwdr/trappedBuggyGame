@@ -8,6 +8,8 @@ TagManager:
   - Cube
   - EnemyBullet
   - ShootingEnemy
+  - Platform
+  - GroundCheck
   layers:
   - Default
   - TransparentFX
