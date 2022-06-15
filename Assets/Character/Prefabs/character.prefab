@@ -429,7 +429,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55104
+    m_Bits: 120640
   m_GroundCheck: {fileID: 228288269}
   m_CeilingCheck: {fileID: 0}
   m_CrouchDisableCollider: {fileID: 0}
@@ -501,8 +501,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0.4
+  m_Size: {x: 0.4, y: 0.4}
+  m_EdgeRadius: 0.3
 --- !u!1 &7074136237757656473
 GameObject:
   m_ObjectHideFlags: 0

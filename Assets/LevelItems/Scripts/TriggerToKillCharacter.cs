@@ -24,4 +24,23 @@ public class TriggerToKillCharacter : MonoBehaviour
 
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.collider.tag == "Player")
+        {
+            var hpObject = collision.collider.GetComponentInParent<HPObject>();
+            if(hpObject== null)
+            {
+                collision.collider.GetComponent<HPObject>();
+            }
+            if (hpObject != null)
+            {
+
+                hpObject.beAttacked();
+            }
+
+        }
+    }
 }
