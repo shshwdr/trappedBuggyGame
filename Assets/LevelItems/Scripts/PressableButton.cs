@@ -59,7 +59,7 @@ public class PressableButton : OnOffProgrammable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" || collision.tag == "Cube" || collision.tag == "Bullet" || collision.tag == "EnemyBullet")
+        if (collision.tag == "Player" || collision.tag == "Composer" || collision.tag == "Cube" || collision.tag == "Bullet" || collision.tag == "EnemyBullet")
         {
             collideCount++;
             Debug.Log("collide count " + collideCount + collision.gameObject.name);
@@ -75,7 +75,7 @@ public class PressableButton : OnOffProgrammable
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.tag == "Player" || collision.tag == "Cube" || collision.tag == "Bullet" || collision.tag == "EnemyBullet")
+        if (collision.tag == "Player" || collision.tag == "Composer" || collision.tag == "Cube" || collision.tag == "Bullet" || collision.tag == "EnemyBullet")
         {
             collideCount--;
             Debug.Log("collide count " + collideCount);

@@ -7,6 +7,7 @@ public class Draw : MonoBehaviour
 {
     GameObject cubeGenerated;
     public GameObject cubePrefab;
+    public float drawDistance = 4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,11 @@ public class Draw : MonoBehaviour
         {
             return;
         }
+        if(positions.Length <= 3)
+        {
+            return;
+        }
+        
         //Debug.Log("positions:");
         //foreach(var v in positions)
         //{
@@ -45,12 +51,20 @@ public class Draw : MonoBehaviour
 
         }
 
+        var dir = (center - transform.position).normalized;
+        var distance = (center - transform.position).magnitude;
+        if (distance > drawDistance)
+        {
+            distance = drawDistance;
+        }
+
+        var finalPosition = transform.position + dir * distance;
 
         if (cubeGenerated)
         {
             Destroy(cubeGenerated);
         }
-        cubeGenerated = Instantiate(cubePrefab, center, Quaternion.identity);
+        cubeGenerated = Instantiate(cubePrefab, finalPosition, Quaternion.identity);
     }
 
     // Update is called once per frame

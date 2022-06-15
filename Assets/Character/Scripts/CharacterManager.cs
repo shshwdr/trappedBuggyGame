@@ -46,7 +46,8 @@ public class CharacterManager : Singleton<CharacterManager>
 
     bool hasAliveCharacter()
     {
-        foreach(var ch in playerMovements)
+        playerMovements = GameObject.FindObjectsOfType<PlayerMovement>();
+        foreach (var ch in playerMovements)
         {
             if (ch && ch.GetComponent<HPObject>().isAlive)
             {
