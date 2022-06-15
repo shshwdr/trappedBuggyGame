@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    Vector3 dir;
+    public Vector3 dir;
     public float speed = 2;
     Rigidbody2D rb;
     public LayerMask destroyLayer;
