@@ -14,7 +14,7 @@ public class BackgroundControl_0 : MonoBehaviour
         for (int i = 0; i < Layer_Object.Length; i++){
             Layer_Object[i] = GameObject.Find("Layer_" + i);
         }
-        //ChangeSprite();
+        ChangeSprite();
     }
 
     void Update() {
