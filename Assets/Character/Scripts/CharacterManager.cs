@@ -17,7 +17,7 @@ public class CharacterManager : Singleton<CharacterManager>
 
         playerMovements = GameObject.FindObjectsOfType<PlayerMovement>();
         camera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
-        camera.Follow = playerMovements[currentIndex].transform;
+        camera.Follow = playerMovements[currentIndex].cameraFollow;
         playerMovements[currentIndex].enablePlayer();
         EventPool.Trigger("updateCharacter");
     }
@@ -79,7 +79,7 @@ public class CharacterManager : Singleton<CharacterManager>
 
         }
         playerMovements[currentIndex].enablePlayer();
-        camera.Follow = playerMovements[currentIndex].transform;
+        camera.Follow = playerMovements[currentIndex].cameraFollow;
         EventPool.Trigger("updateCharacter");
     }
 
@@ -105,7 +105,7 @@ public class CharacterManager : Singleton<CharacterManager>
         }
 
         playerMovements[currentIndex].enablePlayer();
-        camera.Follow = playerMovements[currentIndex].transform;
+        camera.Follow = playerMovements[currentIndex].cameraFollow;
         EventPool.Trigger("updateCharacter");
     }
 

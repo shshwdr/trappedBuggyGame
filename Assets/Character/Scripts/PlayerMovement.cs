@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     bool isControlling = false;
     public GameObject ability;
 
+    public Transform cameraFollow;
+
     public void enablePlayer()
     {
         isControlling = true;
