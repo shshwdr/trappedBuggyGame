@@ -33,12 +33,14 @@ public class RotateByProgrammer : LoopProgrammable
         Debug.Log("return back with current index" + currentIndex);
 
         transform.Rotate(rotateDegree * (maxIndex - currentIndex+1));
+        updateCanvasRotation();
         currentIndex = 0;
     }
     public override void startTurningOn()
     {
         base.startTurningOn();
         transform.Rotate(rotateDegree);
+        updateCanvasRotation();
     }
 
 

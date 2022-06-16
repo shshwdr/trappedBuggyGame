@@ -31,6 +31,10 @@ public class Programmable : MonoBehaviour
     public float turnOnTime = 0.1f;
     protected float turnOffTimer;
 
+    protected Canvas canvas;
+
+    Vector3 globalPosition;
+
     public virtual void turnOn()
     {
         isTurnedOn = true;
@@ -216,6 +220,14 @@ public class Programmable : MonoBehaviour
         var turnOnButton = programCell.GetComponentInChildren<Button>();
         turnOnButton.onClick.AddListener(programmerChange);
         updateText();
+        canvas = GetComponentInChildren<Canvas>();
+        globalPosition = canvas.transform.position;
+    }
+
+    protected void updateCanvasRotation()
+    {
+        canvas.transform.rotation = Quaternion.identity;
+        canvas.transform.position = globalPosition;
     }
 
 }

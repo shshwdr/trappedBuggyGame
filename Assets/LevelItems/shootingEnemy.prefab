@@ -231,6 +231,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2150106039559898859}
     m_Modifications:
+    - target: {fileID: 5080386571845277832, guid: f76929ae7b495f34c981c99179ab0492, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861288488859712774, guid: f76929ae7b495f34c981c99179ab0492, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8045760642186364504, guid: f76929ae7b495f34c981c99179ab0492, type: 3}
       propertyPath: m_Name
       value: ProgramCanvas
@@ -305,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8045760642186364505, guid: f76929ae7b495f34c981c99179ab0492, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.45
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 8045760642186364505, guid: f76929ae7b495f34c981c99179ab0492, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

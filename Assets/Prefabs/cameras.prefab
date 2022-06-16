@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278198024310525388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.8, y: 0, z: -10}
+  m_LocalPosition: {x: -1.97, y: 2.24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 278198025047274506}
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -94,7 +94,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278198024901133476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.86, y: 2.24, z: -10}
+  m_LocalPosition: {x: -1.97, y: 2.24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073727137650510975}
@@ -128,7 +128,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -380,8 +380,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4073727137650510973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: -1.23, y: 0, z: 10}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
   m_Children: []
   m_Father: {fileID: 278198024901133400}
   m_RootOrder: 0
@@ -463,7 +463,7 @@ Transform:
   m_GameObject: {fileID: 4073727137828944148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.8599999, y: 2.24, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073727137636356769}
   - {fileID: 4073727138946909842}
@@ -711,7 +711,7 @@ Transform:
   m_GameObject: {fileID: 4073727138489217415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.8599999, y: 2.24, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073727139390801668}
   - {fileID: 4073727139607479418}
@@ -960,7 +960,7 @@ Transform:
   m_GameObject: {fileID: 4073727138830534908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.8599999, y: 2.24, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073727138698878661}
   - {fileID: 4073727138049758883}
@@ -1208,7 +1208,7 @@ Transform:
   m_GameObject: {fileID: 4073727139172328147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.8599999, y: 2.24, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073727138935972495}
   - {fileID: 4073727138243369224}
@@ -1490,8 +1490,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8997182201019944889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.6, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 4073727139172328173}
   - {fileID: 4073727138489217409}
@@ -1598,6 +1598,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1045683493145126203}
     m_Modifications:
     - target: {fileID: 6187025881397885176, guid: 8eb2be63569e43e41888180c6b8b3f3a, type: 3}
+      propertyPath: Camera_MoveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187025881397885176, guid: 8eb2be63569e43e41888180c6b8b3f3a, type: 3}
+      propertyPath: Layer_Speed.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187025881397885176, guid: 8eb2be63569e43e41888180c6b8b3f3a, type: 3}
       propertyPath: Layer_Objects.Array.data[0]
       value: 
       objectReference: {fileID: 4073727137650510973}
@@ -1620,6 +1628,10 @@ PrefabInstance:
     - target: {fileID: 6187025881397885181, guid: 8eb2be63569e43e41888180c6b8b3f3a, type: 3}
       propertyPath: m_Name
       value: Parallax Controler
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187025881397885182, guid: 8eb2be63569e43e41888180c6b8b3f3a, type: 3}
+      propertyPath: backgroundNum
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6187025881397885183, guid: 8eb2be63569e43e41888180c6b8b3f3a, type: 3}
       propertyPath: m_RootOrder

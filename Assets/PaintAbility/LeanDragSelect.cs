@@ -95,6 +95,10 @@ namespace Lean.Touch
 
         protected virtual void Update()
         {
+            if (DialogueUtils.Instance.isInDialogue)
+            {
+                return;
+            }
             // Get the fingers we want to use
             var fingers = Use.UpdateAndGetFingers(true);
 
@@ -207,6 +211,7 @@ namespace Lean.Touch
 
             if (link != null)
             {
+                select(link.Line);
                 link.Finger = null; // The line will gradually fade out in Update
             }
             //         if (fingerDatas.Count > 0)
@@ -214,7 +219,6 @@ namespace Lean.Touch
             //	Debug.Log("fingers "+fingerDatas.Count);
             //	select(fingerDatas[finger.Index-1]);
             //}
-            select(link.Line);
         }
     }
 }

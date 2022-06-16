@@ -139,6 +139,13 @@ public class PlayerMovement : MonoBehaviour
         //{
         //    isCheat = true;
         //}
+        if (DialogueUtils.Instance.isInDialogue)
+        {
+
+            rb.velocity = Vector2.zero;
+            horizontalMove = 0;
+            return;
+        }
         if (isDead)
         {
             if (isFullyDead)
@@ -270,6 +277,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (DialogueUtils.Instance.isInDialogue)
+        {
+            return;
+        }
         if (isDead)
         {
             return;

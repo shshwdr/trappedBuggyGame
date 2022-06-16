@@ -14,14 +14,13 @@ public class BackgroundControl_0 : MonoBehaviour
         for (int i = 0; i < Layer_Object.Length; i++){
             Layer_Object[i] = GameObject.Find("Layer_" + i);
         }
-        
         ChangeSprite();
     }
 
     void Update() {
         //for presentation without UIs
-        if (Input.GetKeyDown(KeyCode.RightArrow)) NextBG();
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) BackBG();
+        //if (Input.GetKeyDown(KeyCode.RightArrow)) NextBG();
+        //if (Input.GetKeyDown(KeyCode.LeftArrow)) BackBG();
     }
 
     void ChangeSprite(){
