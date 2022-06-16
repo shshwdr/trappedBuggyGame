@@ -66,6 +66,10 @@ public class CharacterController2D : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (DialogueUtils.Instance.isInDialogue)
+		{
+			return;
+		}
 		if (!m_Rigidbody2D)
 		{
 			m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -144,7 +148,11 @@ public class CharacterController2D : MonoBehaviour
 
     public void Move(float move, bool crouch, bool jump)
 	{
-        if (!m_Rigidbody2D)
+		if (DialogueUtils.Instance.isInDialogue)
+		{
+			return;
+		}
+		if (!m_Rigidbody2D)
         {
 			m_Rigidbody2D = GetComponent<Rigidbody2D>();
 

@@ -8,6 +8,7 @@ public class StartLevel : MonoBehaviour
     void Start()
     {
         CharacterManager.Instance.startLevel();
+        
     }
 
     // Update is called once per frame
