@@ -33,6 +33,8 @@ public class Programmable : MonoBehaviour
 
     protected Canvas canvas;
 
+    Vector3 globalPosition;
+
     public virtual void turnOn()
     {
         isTurnedOn = true;
@@ -218,13 +220,14 @@ public class Programmable : MonoBehaviour
         var turnOnButton = programCell.GetComponentInChildren<Button>();
         turnOnButton.onClick.AddListener(programmerChange);
         updateText();
-        canvas = GetComponent<Canvas>();
+        canvas = GetComponentInChildren<Canvas>();
+        globalPosition = canvas.transform.position;
     }
 
     protected void updateCanvasRotation()
     {
-
-        canvas.transform.rotation = Quaternion.Inverse(transform.rotation);
+        canvas.transform.rotation = Quaternion.identity;
+        canvas.transform.position = globalPosition;
     }
 
 }

@@ -63,7 +63,11 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             return;
         }
-        playerMovements[currentIndex].disablePlayer();
+        if (playerMovements[currentIndex])
+        {
+
+            playerMovements[currentIndex].disablePlayer();
+        }
         currentIndex++;
         if (currentIndex >= playerMovements.Length)
         {
@@ -89,7 +93,11 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             return;
         }
-        playerMovements[currentIndex].disablePlayer();
+        if (playerMovements[currentIndex])
+        {
+
+            playerMovements[currentIndex].disablePlayer();
+        }
         currentIndex--;
         if (currentIndex < 0)
         {
