@@ -20,34 +20,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2 spike and push box.unity
     guid: d5f1b8b1563c2604e8fbc0dc98b4fe7a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1.unity
     guid: 2f263bef462f2254c9985279ab3e1183
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/2.unity
     guid: 7e369e46bf691de47b18e4742d9cc732
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3.unity
     guid: 83df30541f112c142b42aa90aad680b4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/4 multiple items far away.unity
     guid: a6c78fa74ee50314bb8a775bc2a99941
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/5 1 shooting flower.unity
     guid: 4523c88821346894e8a6f3ffd97f9869
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/6 1 turn shooting flower.unity
     guid: 8a02cd5815a069a4996dbc5c513b98b0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/7 moving platformer.unity
     guid: eb09e06797939cf4f871072cf90918ed
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/8 moving belt.unity
     guid: 10fa0cec6598e314cb0c2b15e8c81883
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/9 air vent.unity
     guid: 16802b9e1838a3f4484e42e3ec77e76e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/10 water.unity
     guid: a9fb124176035a149b6b612a2ede4dc0
   - enabled: 1

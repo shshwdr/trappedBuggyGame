@@ -9,11 +9,11 @@ public class TutorialText : MonoBehaviour
     public string textName;
     static Dictionary<string, string> texts = new Dictionary<string, string>
     {
-        {"move tutorial", "Move close to buttons and click the button to turn them off" },
-        {"artist tutorial", "Move close to buttons and click the button to turn them off" },
-        {"switch character", "Q or E to switch between different character" },
+        {"move tutorial", "AWSD to move around\nSpace to jump" },
+        {"artist tutorial", "Draw a circle by mouse to create a cube\nYou can only create in range " },
+        {"switch character", "Q or E to switch between different characters" },
         {"coder tutorial", "Move Flavedo close to buttons and click the buttons to turn them off" },
-        {"composer tutorial", "Switch to Kon and drag to shoot. You need to keep shooting to keep the button on." },
+        {"composer tutorial", "Switch to Kon and click or drag to shoot. You need to keep shooting to keep the button on." },
 
     };
 

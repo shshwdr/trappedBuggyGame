@@ -455,6 +455,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2268515846501875273, guid: e2f2e96ab455caa42bc27796cd2a741c, type: 3}
+      propertyPath: textName
+      value: move tutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 7088433917065019777, guid: e2f2e96ab455caa42bc27796cd2a741c, type: 3}
       propertyPath: m_text
       value: 'AWSD to move around
@@ -892,6 +896,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1843321014}
+    - target: {fileID: 278198024901133400, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 278198024901133400, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.24
+      objectReference: {fileID: 0}
     - target: {fileID: 1045683493145126203, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2606,6 +2618,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2268515846501875273, guid: e2f2e96ab455caa42bc27796cd2a741c, type: 3}
+      propertyPath: textName
+      value: artist tutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 7088433917065019777, guid: e2f2e96ab455caa42bc27796cd2a741c, type: 3}
       propertyPath: m_text
       value: 'Draw a circle by mouse to create a cube
