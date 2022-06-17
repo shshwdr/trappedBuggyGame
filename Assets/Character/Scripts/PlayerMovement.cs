@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform cameraFollow;
 
+    public GameObject finishedIcon;
     public void enablePlayer()
     {
         isControlling = true;
@@ -319,8 +320,26 @@ public class PlayerMovement : MonoBehaviour
 
         //controller.footStepParamChanger.TriggerParameters();
     }
+    bool isFinished = false;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!isFinished && collision.tag == "target")
+        {
+            collision.GetComponent<LevelTarget>().tryFinishLevel();
+            finishedIcon.SetActive(true);
+            isFinished = true;
+        }
+    }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+            if (isFinished&&collision.tag == "target")
+            {
+                collision.GetComponent<LevelTarget>().leaveTarget();
+            finishedIcon.SetActive(false);
+            isFinished = false;
+        }
+    }
 
     public void Die(bool destoryPlayerCollider = true)
     {

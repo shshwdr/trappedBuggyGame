@@ -11,6 +11,7 @@ TagManager:
   - Platform
   - GroundCheck
   - Composer
+  - target
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - shootingEnemy
   - composer
   - liquid
-  - 
+  - target
   - 
   - 
   - 
