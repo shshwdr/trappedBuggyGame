@@ -1,3 +1,4 @@
+using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,5 +17,7 @@ public class DialogueUtils : Singleton<DialogueUtils>
     public void StopDialogue()
     {
         isInDialogue = false;
+
+        EventPool.Trigger("DialogueFinished");
     }
 }

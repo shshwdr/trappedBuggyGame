@@ -21,6 +21,7 @@ public class CharacterManager : Singleton<CharacterManager>
         playerMovements[currentIndex].enablePlayer();
         EventPool.Trigger("updateCharacter");
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,10 +47,11 @@ public class CharacterManager : Singleton<CharacterManager>
 
     bool hasAliveCharacter()
     {
-        playerMovements = GameObject.FindObjectsOfType<PlayerMovement>();
+        //if()
+        playerMovements = GameObject.FindObjectsOfType<PlayerMovement>(true);
         foreach (var ch in playerMovements)
         {
-            if (ch && ch.GetComponent<HPObject>().isAlive)
+            if (ch && ch.isActiveAndEnabled && ch.GetComponent<HPObject>().isAlive)
             {
                 return true;
             }
@@ -63,7 +65,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             return;
         }
-        if (playerMovements[currentIndex])
+        if (playerMovements[currentIndex] && playerMovements[currentIndex].isActiveAndEnabled)
         {
 
             playerMovements[currentIndex].disablePlayer();
@@ -73,7 +75,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             currentIndex = 0;
         }
-        while (playerMovements[currentIndex] == null || playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
+        while (playerMovements[currentIndex] == null || !playerMovements[currentIndex].isActiveAndEnabled|| playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
         {
             currentIndex++;
             if (currentIndex >= playerMovements.Length)
@@ -93,7 +95,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             return;
         }
-        if (playerMovements[currentIndex])
+        if (playerMovements[currentIndex]&& playerMovements[currentIndex].isActiveAndEnabled)
         {
 
             playerMovements[currentIndex].disablePlayer();
@@ -103,7 +105,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             currentIndex = playerMovements.Length - 1;
         }
-        while (playerMovements[currentIndex] == null || playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
+        while (playerMovements[currentIndex] == null || !playerMovements[currentIndex].isActiveAndEnabled|| playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
         {
             currentIndex--;
             if (currentIndex < 0)

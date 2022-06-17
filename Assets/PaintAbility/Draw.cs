@@ -3,16 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Draw : MonoBehaviour
+public class Draw : MonoBehaviour, Ability
 {
     GameObject cubeGenerated;
     public GameObject cubePrefab;
     public float drawDistance = 4f;
+    public GameObject range;
     // Start is called before the first frame update
     void Start()
     {
 
         EventPool.OptIn<Vector3[]>("drawLine", draw);
+        EventPool.OptIn("fingerUp", fingerUp);
+        EventPool.OptIn("fingerDown", fingerDown);
+        fingerUp(); 
+    }
+
+    void fingerUp()
+    {
+        range.SetActive(false);
+
+    }
+    void fingerDown()
+    {
+        range.SetActive(true);
+
     }
 
     void draw(Vector3[] positions)
@@ -71,5 +86,14 @@ public class Draw : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void activate(bool isActive)
+    {
+        if (!isActive)
+        {
+            GetComponentInChildren<LineRenderer>().SetPositions(new Vector3[] { });
+            fingerUp();
+        }
     }
 }

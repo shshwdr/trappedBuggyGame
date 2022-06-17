@@ -86,11 +86,13 @@ namespace Lean.Touch
         protected virtual void OnEnable()
         {
             LeanTouch.OnFingerUp += HandleFingerUp;
+            LeanTouch.OnFingerDown += HandleFingerDown;
         }
 
         protected virtual void OnDisable()
         {
             LeanTouch.OnFingerUp -= HandleFingerUp;
+            LeanTouch.OnFingerDown += HandleFingerDown;
         }
 
         protected virtual void Update()
@@ -205,8 +207,22 @@ namespace Lean.Touch
             line.endColor = color1;
         }
 
+        protected virtual void HandleFingerDown(LeanFinger finger)
+        {
+            if (DialogueUtils.Instance.isInDialogue)
+            {
+                return;
+            }
+            EventPool.Trigger("fingerDown");
+        }
         protected virtual void HandleFingerUp(LeanFinger finger)
         {
+
+            if (DialogueUtils.Instance.isInDialogue)
+            {
+                return;
+            }
+            EventPool.Trigger("fingerUp");
             var link = LeanFingerData.Find(fingerDatas, finger);
 
             if (link != null)

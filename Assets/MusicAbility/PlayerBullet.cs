@@ -55,10 +55,10 @@ public class PlayerBullet : MonoBehaviour
                     {
                         player.GetComponent<Rigidbody2D>().AddForce(GetComponent<Bullet>().dir * force);
 
-                        GetComponent<Bullet>().destroy();
                     }
                 }
             }
+            GetComponent<Bullet>().destroy();
         }
         //OnTriggerEnter2D(collision.collider);
     }

@@ -57,7 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -2125453781
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &8045760642186364507
@@ -425,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4539402470302307575, guid: 1bd1ef12e444fd7449d4c6bc61371955, type: 3}
       propertyPath: m_fontSize
-      value: 62.65
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd1ef12e444fd7449d4c6bc61371955, type: 3}
@@ -531,7 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4539402470302307575, guid: 1bd1ef12e444fd7449d4c6bc61371955, type: 3}
       propertyPath: m_fontSize
-      value: 62.65
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd1ef12e444fd7449d4c6bc61371955, type: 3}
