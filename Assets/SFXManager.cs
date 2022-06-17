@@ -74,7 +74,7 @@ public class SFXManager : Singleton<SFXManager>
     }
     public void playDeath()
     {
-        audioSource.PlayOneShot(levelComplete);
+        audioSource.PlayOneShot(death);
     }
     public void playGravityChange()
     {

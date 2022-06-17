@@ -18,9 +18,13 @@ public class TriggerToKillCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" || collision.tag == "Composer" )
+        if (collision.tag == "Player" || collision.tag == "Composer")
         {
-            collision.GetComponentInParent<HPObject>().beAttacked();
+            if (collision.GetComponentInParent<HPObject>())
+        {
+
+                collision.GetComponentInParent<HPObject>().beAttacked();
+            }
 
         }
     }

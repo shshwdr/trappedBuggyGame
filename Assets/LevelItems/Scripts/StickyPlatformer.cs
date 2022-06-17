@@ -52,7 +52,7 @@ public class StickyPlatformer : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "GroundCheck" || collision.tag == "Cube")
+        if (collision &&( collision.tag == "GroundCheck" || collision.tag == "Cube"))
         {
             collision.transform.parent.parent = null;
             //collision.transform.parent.GetComponent<Character>().isOnStickPlatform--;
