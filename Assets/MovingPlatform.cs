@@ -10,6 +10,8 @@ public class MovingPlatform : MonoBehaviour,IReactItem
     private Vector2 startPosition;
     private Vector2 endPosition;
     private Rigidbody2D rBody;
+    AudioSource audio;
+    bool wasOn;
     public void react(bool isOn)
     {
         //transform.DOKill();
@@ -34,6 +36,12 @@ public class MovingPlatform : MonoBehaviour,IReactItem
 
             StartCoroutine(Vector3LerpCoroutine(gameObject, startPosition, speed));
         }
+        if (isOn != wasOn)
+        {
+            wasOn = isOn;
+
+            audio.Play();
+        }
     }
 
     void Start()
@@ -41,6 +49,7 @@ public class MovingPlatform : MonoBehaviour,IReactItem
         rBody = GetComponent<Rigidbody2D>();
         startPosition = platformPathStart.transform.position;
         endPosition = platformPathEnd.transform.position;
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -67,6 +76,7 @@ public class MovingPlatform : MonoBehaviour,IReactItem
             time += Time.deltaTime;
             yield return null;
         }
+        audio.Stop();
     }
 
     //void OnCollisionEnter2D(Collision2D col)

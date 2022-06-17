@@ -13,6 +13,7 @@ public class TutorialText : MonoBehaviour
         {"artist tutorial", "Move close to buttons and click the button to turn them off" },
         {"switch character", "Q or E to switch between different character" },
         {"coder tutorial", "Move Flavedo close to buttons and click the buttons to turn them off" },
+        {"composer tutorial", "Switch to Kon and drag to shoot. You need to keep shooting to keep the button on." },
 
     };
 

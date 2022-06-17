@@ -36,11 +36,15 @@ public class SearchProgrammables : MonoBehaviour, Ability
 
             programmables = GameObject.FindObjectsOfType<Programmable>(true);
         }
+
         foreach (Programmable p in programmables)
         {
             if ((p.transform.position - transform.position).magnitude < detectDistance)
             {
-                p.activate(true);
+                if (this.isActiveAndEnabled)
+                {
+                    p.activate(true);
+                }
             }
             else
             {

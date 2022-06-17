@@ -77,7 +77,7 @@ public class PopupDialogue:Singleton<PopupDialogue>
         }
 
         yesButton.GetComponentInChildren<TMP_Text>().text = yesString;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     void clearButton()
@@ -92,7 +92,7 @@ public class PopupDialogue:Singleton<PopupDialogue>
 
     public void Hide()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         Destroy(gameObject);
         //group.alpha = 0;
         //group.interactable = false;

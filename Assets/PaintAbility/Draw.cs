@@ -96,7 +96,7 @@ public class Draw : MonoBehaviour, Ability
     {
         if (!isActive)
         {
-            GetComponentInChildren<LineRenderer>().SetPositions(new Vector3[] { });
+            //GetComponentInChildren<LineRenderer>().SetPositions(new Vector3[] { });
             fingerUp();
         }
     }

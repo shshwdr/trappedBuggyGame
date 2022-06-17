@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour,Ability
         EventPool.OptIn< Vector3[]>("drawLine", drawline);
         EventPool.OptIn("fingerUp", fingerUp);
         EventPool.OptIn("fingerDown", fingerDown);
+        audio = GetComponent<AudioSource>();
     }
     void fingerUp()
     {
@@ -29,7 +30,7 @@ public class Shoot : MonoBehaviour,Ability
         if (!isActive)
         {
             var lineRenderer = GetComponentInChildren<LineRenderer>();
-            lineRenderer.positionCount = 0;
+           // lineRenderer.positionCount = 0;
             //GetComponentInChildren<LineRenderer>().SetPositions(new Vector3[] { });
         }
     }

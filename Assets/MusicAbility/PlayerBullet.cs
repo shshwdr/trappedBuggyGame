@@ -13,7 +13,7 @@ public class PlayerBullet : MonoBehaviour
             return;
         }
         var collision = coll.collider;
-        if (collision.tag != "Player" && collision.tag != "Platform" && collision.tag != "Bullet")
+        if (collision.tag != "Player" && /*collision.tag != "Platform" && */collision.tag != "Bullet")
         {
             if (collision.GetComponent<HPObject>())
             {
