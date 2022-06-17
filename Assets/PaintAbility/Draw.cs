@@ -9,10 +9,11 @@ public class Draw : MonoBehaviour, Ability
     public GameObject cubePrefab;
     public float drawDistance = 4f;
     public GameObject range;
+    AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
         EventPool.OptIn<Vector3[]>("drawLine", draw);
         EventPool.OptIn("fingerUp", fingerUp);
         EventPool.OptIn("fingerDown", fingerDown);
@@ -21,11 +22,13 @@ public class Draw : MonoBehaviour, Ability
 
     void fingerUp()
     {
+        audio.Stop();
         range.SetActive(false);
 
     }
     void fingerDown()
     {
+        audio.Play();
         range.SetActive(true);
 
     }
@@ -80,6 +83,7 @@ public class Draw : MonoBehaviour, Ability
             Destroy(cubeGenerated);
         }
         cubeGenerated = Instantiate(cubePrefab, finalPosition, Quaternion.identity);
+        SFXManager.Instance. playCubeAppear();
     }
 
     // Update is called once per frame

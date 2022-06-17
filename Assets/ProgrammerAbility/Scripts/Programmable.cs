@@ -108,7 +108,6 @@ public class Programmable : MonoBehaviour
     {
         if (!isControlledByProgrammer)
         {
-
             turnOnByProgrammer();
         }
         else if (programmerTurnedOn)
@@ -120,6 +119,7 @@ public class Programmable : MonoBehaviour
         {
             stopControll();
         }
+        SFXManager.Instance.playHack();
     }
 
     public virtual void toggleTurnOn()

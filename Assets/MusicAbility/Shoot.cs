@@ -6,12 +6,24 @@ using UnityEngine;
 public class Shoot : MonoBehaviour,Ability
 {
     public GameObject bullet;
+    AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
         EventPool.OptIn< Vector3[]>("drawLine", drawline);
+        EventPool.OptIn("fingerUp", fingerUp);
+        EventPool.OptIn("fingerDown", fingerDown);
     }
+    void fingerUp()
+    {
+        audio.Stop();
 
+    }
+    void fingerDown()
+    {
+        audio.Play();
+
+    }
     public void activate(bool isActive)
     {
         if (!isActive)
@@ -33,6 +45,7 @@ public class Shoot : MonoBehaviour,Ability
             var go = Instantiate(bullet, transform.position, Quaternion.identity);
             go.GetComponent<Bullet>().init((p - transform.position).normalized);
         }
+        SFXManager.Instance.playComposerShoot();
     }
     // Update is called once per frame
     void Update()

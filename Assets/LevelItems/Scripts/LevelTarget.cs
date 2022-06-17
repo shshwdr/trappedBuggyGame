@@ -12,7 +12,7 @@ public class LevelTarget : MonoBehaviour
 
 
             Physics2D.gravity = new Vector2(0, -25f);
-
+            SFXManager.Instance. playLevelComplete();
             GameManager.Instance.nextLevel();
         }
     }

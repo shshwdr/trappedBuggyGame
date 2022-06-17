@@ -12,10 +12,19 @@ public class CharacterManager : Singleton<CharacterManager>
 
     public PlayerMovement currentPlayer { get { return playerMovements[currentIndex]; } }
 
-    public void startLevel()
+    void updatePlayerMovements()
     {
 
-        playerMovements = GameObject.FindObjectsOfType<PlayerMovement>();
+        playerMovements = new PlayerMovement[] {
+        GameObject.Find("artist")?.GetComponent<PlayerMovement>(),
+        GameObject.Find("coder")?.GetComponent<PlayerMovement>(),
+        GameObject.Find("composer")?.GetComponent<PlayerMovement>(),
+        };
+    }
+
+    public void startLevel()
+    {
+        updatePlayerMovements();
         camera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         camera.Follow = playerMovements[currentIndex].cameraFollow;
         playerMovements[currentIndex].enablePlayer();
@@ -48,7 +57,7 @@ public class CharacterManager : Singleton<CharacterManager>
     bool hasAliveCharacter()
     {
         //if()
-        playerMovements = GameObject.FindObjectsOfType<PlayerMovement>(true);
+        updatePlayerMovements();
         foreach (var ch in playerMovements)
         {
             if (ch && ch.isActiveAndEnabled && ch.GetComponent<HPObject>().isAlive)
@@ -65,6 +74,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             return;
         }
+        var originIndex = currentIndex;
         if (playerMovements[currentIndex] && playerMovements[currentIndex].isActiveAndEnabled)
         {
 
@@ -84,6 +94,13 @@ public class CharacterManager : Singleton<CharacterManager>
             }
 
         }
+
+
+        if (originIndex != currentIndex)
+        {
+
+            SFXManager.Instance.playSwitchCharacter(currentIndex);
+        }
         playerMovements[currentIndex].enablePlayer();
         camera.Follow = playerMovements[currentIndex].cameraFollow;
         EventPool.Trigger("updateCharacter");
@@ -95,6 +112,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             return;
         }
+        var originIndex = currentIndex;
         if (playerMovements[currentIndex]&& playerMovements[currentIndex].isActiveAndEnabled)
         {
 
@@ -112,6 +130,13 @@ public class CharacterManager : Singleton<CharacterManager>
             {
                 currentIndex = playerMovements.Length - 1;
             }
+        }
+
+
+        if (originIndex != currentIndex)
+        {
+
+            SFXManager.Instance.playSwitchCharacter(currentIndex);
         }
 
         playerMovements[currentIndex].enablePlayer();

@@ -37,6 +37,7 @@ public class PressableButton : OnOffProgrammable
 
         transform.DOKill();
 
+        SFXManager.Instance.playButtonPressed(false);
         buttonObject.transform.DOScaleY(1, turnOffTime);
         reactItem.GetComponent<IReactItem>().react(false);
     }
@@ -48,7 +49,7 @@ public class PressableButton : OnOffProgrammable
 
         transform.DOKill();
         buttonObject.transform.DOScaleY(0, turnOnTime);
-
+        SFXManager.Instance.playButtonPressed(true);
         reactItem.GetComponent<IReactItem>().react(true);
     }
 
