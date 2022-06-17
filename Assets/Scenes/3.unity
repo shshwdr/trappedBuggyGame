@@ -917,6 +917,22 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 533136164}
+    - target: {fileID: 278198024310525390, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 278198024310525390, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 278198024901133400, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 278198024901133400, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1045683493145126203, guid: 1edbf286aa840924dbc5c806edda649e, type: 3}
       propertyPath: m_RootOrder
       value: 9
