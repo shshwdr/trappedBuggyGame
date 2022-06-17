@@ -27,9 +27,10 @@ public class SearchProgrammables : MonoBehaviour, Ability
 
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void updateProgrammables()
     {
+
         if (programmables == null)
         {
 
@@ -37,7 +38,7 @@ public class SearchProgrammables : MonoBehaviour, Ability
         }
         foreach (Programmable p in programmables)
         {
-            if((p.transform.position - transform.position).magnitude < detectDistance)
+            if ((p.transform.position - transform.position).magnitude < detectDistance)
             {
                 p.activate(true);
             }
@@ -47,6 +48,11 @@ public class SearchProgrammables : MonoBehaviour, Ability
                 p.activate(false);
             }
         }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        updateProgrammables();
     }
 
     public void activate(bool isActive)

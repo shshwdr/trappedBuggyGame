@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a66b2db8845dac4e92fb0c3a90545ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,21 +94,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004084766, y: 0.46974522}
+  m_Offset: {x: 0.033239603, y: 1.3295774}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.35, y: 3.09}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9101356, y: 0.46898377}
+  m_Size: {x: 4.621548, y: 0.43084478}
   m_EdgeRadius: 0
 --- !u!114 &203395149
 MonoBehaviour:
@@ -192,6 +192,26 @@ PrefabInstance:
     - target: {fileID: 1920812144296925411, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
       propertyPath: m_Name
       value: moving platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920812144296925436, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
+      propertyPath: m_Size.x
+      value: 5.4601183
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920812144296925436, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5374694
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920812144296925436, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.04955721
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920812144296925436, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.156327
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920812144296925436, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1920812144296925438, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
       propertyPath: m_RootOrder
@@ -285,3 +305,22 @@ MonoBehaviour:
   platformPathStart: {fileID: 1899020799}
   platformPathEnd: {fileID: 2064247901}
   speed: 2
+--- !u!251 &7380307638330234968
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675217430686312215}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 33344
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 120
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
