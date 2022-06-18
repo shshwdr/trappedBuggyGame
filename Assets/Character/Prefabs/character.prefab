@@ -445,7 +445,19 @@ MonoBehaviour:
   footstepTimer: 0
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1147265384}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStepEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -526,7 +538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7074136237757656478
 Transform:
   m_ObjectHideFlags: 0
@@ -630,7 +642,7 @@ GameObject:
   - component: {fileID: 1468284265062654629}
   - component: {fileID: 406414977821273284}
   - component: {fileID: 7539569105807648907}
-  m_Layer: 6
+  m_Layer: 18
   m_Name: top
   m_TagString: Platform
   m_Icon: {fileID: 0}

@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             usingJoyStick = true;
         }
         controller = GetComponent<CharacterController2D>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         EventPool.OptIn("clickGameOver", GameoverRespawn);
@@ -219,12 +219,12 @@ public class PlayerMovement : MonoBehaviour
 
             movement = Vector2.ClampMagnitude(movement, 1);
         }
-        if (speed >= 0.01)
-        {
-            hideTutorial(0);
-        }
+        //if (speed >= 0.01)
+        //{
+        //    hideTutorial(0);
+        //}
         if(animator)
-        animator.SetFloat("speed", speed);
+        animator.SetBool("isWalking", speed >= 0.01);
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;

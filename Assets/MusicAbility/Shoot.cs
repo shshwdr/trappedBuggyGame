@@ -7,9 +7,11 @@ public class Shoot : MonoBehaviour,Ability
 {
     public GameObject bullet;
     AudioSource audio;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        animator = transform.parent.GetComponentInChildren<Animator>();
         EventPool.OptIn< Vector3[]>("drawLine", drawline);
         EventPool.OptIn("fingerUp", fingerUp);
         EventPool.OptIn("fingerDown", fingerDown);
@@ -17,12 +19,22 @@ public class Shoot : MonoBehaviour,Ability
     }
     void fingerUp()
     {
+        if (!gameObject.active)
+        {
+            return;
+        }
         audio.Stop();
+        animator.SetBool("isAction", false);
 
     }
     void fingerDown()
     {
+        if (!gameObject.active)
+        {
+            return;
+        }
         audio.Play();
+        animator.SetBool("isAction", true);
 
     }
     public void activate(bool isActive)

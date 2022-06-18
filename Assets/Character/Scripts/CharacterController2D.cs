@@ -18,12 +18,15 @@ public class CharacterController2D : MonoBehaviour
 	const float k_CeilingRadius = .02f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = false;  // For determining which way the player is currently facing.
+	bool originalFacingRight = true;
 	private Vector3 m_Velocity = Vector3.zero;
 
 	[SerializeField] public float footstepTimeMin;
 	[SerializeField] public float footstepTimeMax;
 	[SerializeField] public float footstepTime;
 	public float footstepTimer;
+
+	
 
 	[Header("Events")]
 	[Space]
@@ -45,7 +48,7 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 
-		animator = GetComponent<Animator>();
+		animator = GetComponentInChildren<Animator>();
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
@@ -210,13 +213,13 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_FacingRight)
+			if (move > 0 && m_FacingRight)
 			{
 				// ... flip the player.
 				Flip();
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_FacingRight)
+			else if (move < 0 && !m_FacingRight)
 			{
 				// ... flip the player.
 				Flip();
@@ -238,12 +241,12 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Flip()
 	{
-		// Switch the way the player is labelled as facing.
-		//m_FacingRight = !m_FacingRight;
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
 
-		//// Multiply the player's x local scale by -1.
-		//Vector3 theScale = transform.localScale;
-		//theScale.x *= -1;
-		//transform.localScale = theScale;
-	}
+        // Multiply the player's x local scale by -1.
+        Vector3 theScale = animator.transform.localScale;
+        theScale.x *= -1;
+        animator.transform.localScale = theScale;
+    }
 }

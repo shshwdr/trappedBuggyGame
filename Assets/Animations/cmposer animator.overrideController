@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: cmposer animator
+  m_Controller: {fileID: 9100000, guid: 67c06dc8a4fcd004d9ca0cb5f1fad627, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 389fdecf0245bef4c9def20d1327732d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b8dc44b06c97eb342b6a8a9d111c7f9d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9d36058bfddd66643961b3cb991c2651, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 121741cee0741ea43b5ecd6f630b51a2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f36c016763679964d81d2a76bab71bd2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6a257135ea3d03c44b2dd0fd5010ccd1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f2c88517f0015b04087fc90129445064, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5e27bdba7a6a56a4799f8d50c5913345, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 693eb11a0e3c2e247ab1c53abf106172, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c86c7549cf7a19e4da024b6e29d71608, type: 2}

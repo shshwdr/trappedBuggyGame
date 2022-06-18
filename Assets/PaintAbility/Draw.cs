@@ -10,10 +10,12 @@ public class Draw : MonoBehaviour, Ability
     public float drawDistance = 4f;
     public GameObject range;
     AudioSource audio;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        animator = transform.parent. GetComponentInChildren<Animator>();
         EventPool.OptIn<Vector3[]>("drawLine", draw);
         EventPool.OptIn("fingerUp", fingerUp);
         EventPool.OptIn("fingerDown", fingerDown);
@@ -22,14 +24,25 @@ public class Draw : MonoBehaviour, Ability
 
     void fingerUp()
     {
+        if (!gameObject.active)
+        {
+            return;
+        }
         audio.Stop();
         range.SetActive(false);
+        animator.SetBool("isAction", false);
 
     }
     void fingerDown()
     {
+
+        if (!gameObject.active)
+        {
+            return;
+        }
         audio.Play();
         range.SetActive(true);
+        animator.SetBool("isAction", true);
 
     }
 

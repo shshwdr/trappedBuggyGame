@@ -8,9 +8,11 @@ public class SearchProgrammables : MonoBehaviour, Ability
     Programmable[] programmables;
     public float detectDistance = 1;
     public GameObject range;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        animator = transform.parent.GetComponentInChildren<Animator>();
         programmables = GameObject.FindObjectsOfType<Programmable>(true);
         EventPool.OptIn("fingerUp", fingerUp);
         EventPool.OptIn("fingerDown", fingerDown);
@@ -18,12 +20,22 @@ public class SearchProgrammables : MonoBehaviour, Ability
     }
     void fingerUp()
     {
+        if (!gameObject.active)
+        {
+            return;
+        }
         range.SetActive(false);
+        animator.SetBool("isAction", false);
 
     }
     void fingerDown()
     {
+        if (!gameObject.active)
+        {
+            return;
+        }
         range.SetActive(true);
+        animator.SetBool("isAction", true);
 
     }
 
