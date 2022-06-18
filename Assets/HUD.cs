@@ -7,10 +7,13 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public Image image;
+    public Button nextLevelButton;
+    public Image[] passLevelIcons;
     // Start is called before the first frame update
     void Awake()
     {
         EventPool.OptIn("updateCharacter", updateCharacter);
+        EventPool.OptIn("finishCharacter", updateCharacter);
     }
 
     void updateCharacter()

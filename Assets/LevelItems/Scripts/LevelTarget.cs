@@ -8,16 +8,16 @@ public class LevelTarget : MonoBehaviour
     int currentNumber = 0;
     public void tryFinishLevel()
     {
-        currentNumber++;
-        if(currentNumber == targetNumber)
-        {
-            finishLevel();
-        }
-        else
-        {
-            PopupDialogue.createPopupDialogue("Not all characters arrived, do you want to go to next level?", delegate { finishLevel(); });
+        //currentNumber++;
+        //if(currentNumber == targetNumber)
+        //{
+        //    //finishLevel();
+        //}
+        //else
+        //{
+        //   // PopupDialogue.createPopupDialogue("Not all characters arrived, do you want to go to next level?", delegate { finishLevel(); });
 
-        }
+        //}
     }
 
     void finishLevel()

@@ -250,6 +250,10 @@ PrefabInstance:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1920812144296925437, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1920812144296925438, guid: b679982184723134f9cbfd59a35aa3b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
