@@ -50,6 +50,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6135602, guid: 609470f693df4c8498be0e26d6dec990, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135602, guid: 609470f693df4c8498be0e26d6dec990, type: 3}
+      propertyPath: m_Color.g
+      value: 0.36041307
+      objectReference: {fileID: 0}
     - target: {fileID: 83860548, guid: 609470f693df4c8498be0e26d6dec990, type: 3}
       propertyPath: reactItem
       value: 
@@ -96,7 +104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990533573179467864, guid: 609470f693df4c8498be0e26d6dec990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 1990533573179467864, guid: 609470f693df4c8498be0e26d6dec990, type: 3}
       propertyPath: m_LocalPosition.y

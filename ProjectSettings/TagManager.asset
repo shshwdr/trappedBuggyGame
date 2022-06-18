@@ -12,6 +12,7 @@ TagManager:
   - GroundCheck
   - Composer
   - target
+  - Obstacle
   layers:
   - Default
   - TransparentFX

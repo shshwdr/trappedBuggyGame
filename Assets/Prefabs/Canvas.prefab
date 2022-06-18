@@ -780,7 +780,7 @@ MonoBehaviour:
   - {fileID: 2335812220393610601}
   - {fileID: 7797555331564312110}
   - {fileID: 7797555331224941486}
-  passLevelPanel: {fileID: 0}
+  passLevelPanel: {fileID: 98580540}
 --- !u!1 &2335812220550037276
 GameObject:
   m_ObjectHideFlags: 0
