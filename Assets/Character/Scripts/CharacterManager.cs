@@ -53,8 +53,9 @@ public class CharacterManager : Singleton<CharacterManager>
         camera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
         camera.Follow = playerMovements[currentIndex].cameraFollow;
         playerMovements[currentIndex].enablePlayer();
-        EventPool.Trigger("updateCharacter");
         finishedState = new bool[3];
+        passedIndex = 0;
+        EventPool.Trigger("updateCharacter");
         EventPool.Trigger("characterTargetChange");
     }
 

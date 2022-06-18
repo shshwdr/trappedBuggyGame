@@ -23,9 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3 shooting enemy.unity
     guid: 74b2344cc6f9fa7408166eeb1858aac8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/4 air vent.unity
     guid: a354a5db3e813644092cc90f5e171a22
+  - enabled: 1
+    path: Assets/Scenes/5 gravity change.unity
+    guid: 5a9febc9b73955e4c9f5112e188c6978
   - enabled: 0
     path: Assets/Scenes/1.unity
     guid: 2f263bef462f2254c9985279ab3e1183
