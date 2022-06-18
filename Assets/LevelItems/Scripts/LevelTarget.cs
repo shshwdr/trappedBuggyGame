@@ -20,14 +20,6 @@ public class LevelTarget : MonoBehaviour
         //}
     }
 
-    void finishLevel()
-    {
-        Debug.Log("win");
-
-        Physics2D.gravity = new Vector2(0, -25f);
-        SFXManager.Instance.playLevelComplete();
-        GameManager.Instance.nextLevel();
-    }
 
     public void leaveTarget()
     {

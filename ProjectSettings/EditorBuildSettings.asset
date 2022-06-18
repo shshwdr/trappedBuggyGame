@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2 spike and push box.unity
     guid: d5f1b8b1563c2604e8fbc0dc98b4fe7a
+  - enabled: 1
+    path: Assets/Scenes/3 shooting enemy.unity
+    guid: 74b2344cc6f9fa7408166eeb1858aac8
+  - enabled: 0
+    path: Assets/Scenes/4 air vent.unity
+    guid: a354a5db3e813644092cc90f5e171a22
   - enabled: 0
     path: Assets/Scenes/1.unity
     guid: 2f263bef462f2254c9985279ab3e1183

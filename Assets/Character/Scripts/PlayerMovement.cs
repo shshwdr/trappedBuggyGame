@@ -325,7 +325,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!isFinished && collision.tag == "target")
         {
-            collision.GetComponent<LevelTarget>().tryFinishLevel();
+            CharacterManager.Instance.finishCharacter(this);
+            //collision.GetComponent<char>().tryFinishLevel();
             finishedIcon.SetActive(true);
             isFinished = true;
         }
@@ -334,8 +335,9 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
             if (isFinished&&collision.tag == "target")
-            {
-                collision.GetComponent<LevelTarget>().leaveTarget();
+        {
+            CharacterManager.Instance.leaveCharacter(this);
+            //collision.GetComponent<LevelTarget>().leaveTarget();
             finishedIcon.SetActive(false);
             isFinished = false;
         }

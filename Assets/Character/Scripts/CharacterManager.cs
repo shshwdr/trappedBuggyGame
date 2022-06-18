@@ -6,16 +6,41 @@ using UnityEngine;
 
 public class CharacterManager : Singleton<CharacterManager>
 {
-    PlayerMovement[] playerMovements;
+    List<PlayerMovement> playerMovements;
     CinemachineVirtualCamera camera;
     int currentIndex = 0;
+    public int passedIndex = 0;
+    public bool[] finishedState = new bool[3];
 
+    public void finishCharacter(PlayerMovement player)
+    {
+        var index = playerMovements.IndexOf(player);
+        if(finishedState[index] != true)
+        {
+
+            finishedState[index] = true;
+            passedIndex++;
+            EventPool.Trigger("characterTargetChange");
+            
+        }
+    }
+    public void leaveCharacter(PlayerMovement player)
+    {
+
+        var index = playerMovements.IndexOf(player);
+        if (finishedState[index] != false)
+        {
+            finishedState[index] = false;
+            passedIndex--;
+            EventPool.Trigger("characterTargetChange");
+        }
+    }
     public PlayerMovement currentPlayer { get { return playerMovements[currentIndex]; } }
 
     void updatePlayerMovements()
     {
 
-        playerMovements = new PlayerMovement[] {
+        playerMovements = new List<PlayerMovement> {
         GameObject.Find("artist")?.GetComponent<PlayerMovement>(),
         GameObject.Find("coder")?.GetComponent<PlayerMovement>(),
         GameObject.Find("composer")?.GetComponent<PlayerMovement>(),
@@ -29,6 +54,8 @@ public class CharacterManager : Singleton<CharacterManager>
         camera.Follow = playerMovements[currentIndex].cameraFollow;
         playerMovements[currentIndex].enablePlayer();
         EventPool.Trigger("updateCharacter");
+        finishedState = new bool[3];
+        EventPool.Trigger("characterTargetChange");
     }
 
     // Start is called before the first frame update
@@ -81,14 +108,14 @@ public class CharacterManager : Singleton<CharacterManager>
             playerMovements[currentIndex].disablePlayer();
         }
         currentIndex++;
-        if (currentIndex >= playerMovements.Length)
+        if (currentIndex >= playerMovements.Count)
         {
             currentIndex = 0;
         }
         while (playerMovements[currentIndex] == null || !playerMovements[currentIndex].isActiveAndEnabled|| playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
         {
             currentIndex++;
-            if (currentIndex >= playerMovements.Length)
+            if (currentIndex >= playerMovements.Count)
             {
                 currentIndex = 0;
             }
@@ -121,14 +148,14 @@ public class CharacterManager : Singleton<CharacterManager>
         currentIndex--;
         if (currentIndex < 0)
         {
-            currentIndex = playerMovements.Length - 1;
+            currentIndex = playerMovements.Count - 1;
         }
         while (playerMovements[currentIndex] == null || !playerMovements[currentIndex].isActiveAndEnabled|| playerMovements[currentIndex].GetComponent<HPObject>() == null ||  !playerMovements[currentIndex].GetComponent<HPObject>().isAlive)
         {
             currentIndex--;
             if (currentIndex < 0)
             {
-                currentIndex = playerMovements.Length - 1;
+                currentIndex = playerMovements.Count - 1;
             }
         }
 
