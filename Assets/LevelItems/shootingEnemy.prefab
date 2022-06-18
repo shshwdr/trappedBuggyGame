@@ -80,6 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c872415dabe5306459fa86749691f07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlImages:
+  - {fileID: 2150106040924021903}
   isTurnedOn: 0
   turnOnTrueString: Disabled
   turnOnFalseString: Enabled
@@ -131,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e714ac0edd50d0847b29ce5242b2fad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlImages:
+  - {fileID: 2150106040924021903}
   isTurnedOn: 0
   turnOnTrueString: On
   turnOnFalseString: Off
@@ -179,6 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2150106040924021902}
   - component: {fileID: 2150106040924021903}
+  - component: {fileID: 183665028252749267}
   m_Layer: 14
   m_Name: Square
   m_TagString: Untagged
@@ -219,7 +224,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b5a4a250d9c21824382191df16c58c6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -251,6 +256,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &183665028252749267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150106040924021905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1001 &812405075894773972
 PrefabInstance:
   m_ObjectHideFlags: 0

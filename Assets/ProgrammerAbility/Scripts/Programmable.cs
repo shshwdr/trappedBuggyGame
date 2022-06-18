@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class Programmable : MonoBehaviour
 {
+
+
+    public SpriteRenderer[] controlImages;
     public bool isTurnedOn = false;
 
     public string turnOnTrueString = "On";
@@ -134,6 +137,13 @@ public class Programmable : MonoBehaviour
         isControlledByProgrammer = false;
         programmerTurnedOn = false;
 
+        foreach(var controlImage in controlImages)
+        {
+            var mat = controlImage.material;
+
+            mat.DisableKeyword("HOLOGRAM_ON");
+
+        }
         updateText();
     }
     public virtual void startTurningOn()
@@ -156,6 +166,16 @@ public class Programmable : MonoBehaviour
             startTurningOn();
             isTurnedOn = true;
         }
+
+
+        foreach (var controlImage in controlImages)
+        {
+            var mat = controlImage.material;
+
+            mat.EnableKeyword("HOLOGRAM_ON");
+
+        }
+
         updateText();
     }
 
@@ -167,6 +187,14 @@ public class Programmable : MonoBehaviour
         {
             startTurningOff();
             isTurnedOn = false;
+        }
+
+        foreach (var controlImage in controlImages)
+        {
+            var mat = controlImage.material;
+
+            mat.EnableKeyword("HOLOGRAM_ON");
+
         }
         updateText();
     }

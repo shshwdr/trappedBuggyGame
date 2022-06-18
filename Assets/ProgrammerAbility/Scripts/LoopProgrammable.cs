@@ -17,6 +17,10 @@ public class LoopProgrammable : Programmable
             currentIndex = 0;
         }
         turnOnByProgrammer();
+
+        SFXManager.Instance.playHack();
+
+
     }
 
     public override void turnOnByProgrammer()
@@ -26,6 +30,15 @@ public class LoopProgrammable : Programmable
         {
             startTurningOn();
             //isTurnedOn = true;
+        }
+
+
+        foreach (var controlImage in controlImages)
+        {
+            var mat = controlImage.material;
+
+            mat.EnableKeyword("HOLOGRAM_ON");
+
         }
         //updateText();
     }

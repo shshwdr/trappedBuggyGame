@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1b36a99eb0a3a6b46bb36dc6533b63b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -266,6 +266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365b6cbbe8fc5a54ea8c9c0e5fd09420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlImages:
+  - {fileID: 5188299543059775258}
+  - {fileID: 6135602}
   isTurnedOn: 0
   turnOnTrueString: On
   turnOnFalseString: Off
@@ -309,6 +312,7 @@ GameObject:
   - component: {fileID: 3755480003921155588}
   - component: {fileID: 5188299543059775258}
   - component: {fileID: 5878463915814268489}
+  - component: {fileID: 1562972054259200057}
   m_Layer: 12
   m_Name: bottom
   m_TagString: Untagged
@@ -349,7 +353,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1b36a99eb0a3a6b46bb36dc6533b63b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -407,6 +411,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &1562972054259200057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881797410846795518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1001 &8374306137881379919
 PrefabInstance:
   m_ObjectHideFlags: 0
