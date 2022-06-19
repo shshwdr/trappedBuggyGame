@@ -18,9 +18,16 @@ public class SFXManager : Singleton<SFXManager>
     public AudioClip gravityChange;
     public AudioClip buttonPressed;
     public AudioClip buttonReleased;
+    public AudioClip getInTarget;
+    public AudioClip leaveTarget;
     public AudioClip[] enemyShoot;
 
     AudioSource audioSource;
+
+    public void playAtTarget(bool isIn)
+    {
+        audioSource.PlayOneShot((isIn?getInTarget: leaveTarget));
+    }
 
     public void playSwitchCharacter(int i)
     {

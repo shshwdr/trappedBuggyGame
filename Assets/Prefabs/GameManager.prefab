@@ -154,6 +154,8 @@ MonoBehaviour:
   gravityChange: {fileID: 8300000, guid: f877f10ccc25d664ba5baf683255f7a4, type: 3}
   buttonPressed: {fileID: 8300000, guid: a566ecfb3cd485a499ab66cc76cf22a6, type: 3}
   buttonReleased: {fileID: 8300000, guid: 2cae80e110409bf4ab4b4f534a835ae1, type: 3}
+  getInTarget: {fileID: 8300000, guid: 2132028ccbf5e3e45852d51ae8d924bd, type: 3}
+  leaveTarget: {fileID: 8300000, guid: 9cecaab87f8b87e44b6993df29dafd3b, type: 3}
   enemyShoot:
   - {fileID: 8300000, guid: d65677c27abb0f84aaae4fcb85b624ad, type: 3}
   - {fileID: 8300000, guid: 2b6f296b653b49b44ba528d2729fb8d9, type: 3}
@@ -331,6 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fda8ed5aa8d4a94ca0b77de8ce176f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  passedIndex: 0
+  finishedState: 000000
 --- !u!1 &3093926542955927581
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,10 @@ public class TutorialText : MonoBehaviour
         {"move tutorial", "AWSD to move around\nSpace to jump" },
         {"artist tutorial", "Draw a circle by mouse to create a cube\nYou can only create in range " },
         {"switch character", "Q or E to switch between different characters" },
+        {"multiple finish", "You can finish level along, or with multiple characters arriving the target" },
         {"coder tutorial", "Move Flavedo close to buttons and click the buttons to turn them off" },
         {"composer tutorial", "Switch to Kon and click or drag to shoot. You need to keep shooting to keep the button on." },
+        {"shoot character", "Composer can shoot to push others" },
 
     };
 

@@ -38,6 +38,7 @@ public class HPObject : MonoBehaviour
         }
         isAlive = false;
         EventPool.Trigger<HPObject>("die", this);
+        
         gameObject.SetActive(false);
         SFXManager.Instance.playDeath();
         //Destroy(gameObject,0.1f);

@@ -20,6 +20,7 @@ public class CharacterManager : Singleton<CharacterManager>
 
             finishedState[index] = true;
             passedIndex++;
+            SFXManager.Instance.playAtTarget(true);
             EventPool.Trigger("characterTargetChange");
             
         }
@@ -32,6 +33,7 @@ public class CharacterManager : Singleton<CharacterManager>
         {
             finishedState[index] = false;
             passedIndex--;
+            SFXManager.Instance.playAtTarget(false);
             EventPool.Trigger("characterTargetChange");
         }
     }
